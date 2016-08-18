@@ -12,7 +12,7 @@ class Debouncer: NSObject {
     
     func call() {
         timer?.invalidate()
-        let nextTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self, selector: "fireNow", userInfo: nil, repeats: false)
+        let nextTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self, selector: #selector(Debouncer.fireNow), userInfo: nil, repeats: false)
         timer = nextTimer
     }
     
